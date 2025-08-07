@@ -22,6 +22,7 @@
 1. 复制以下完整脚本代码：
 
 ```javascript
+
 // ==UserScript==
 // @name         PDF下载助手 - 智慧教育平台
 // @namespace    http://tampermonkey.net/
@@ -184,6 +185,7 @@
         }, 5000);
     });
 })();
+
 ```
 
 2. 打开油猴插件 → 点击"添加新脚本"

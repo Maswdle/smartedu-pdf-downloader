@@ -19,16 +19,15 @@
 
 ### 第二步：安装脚本
 
-1. 复制以下完整脚本代码：
+1. 复制以下完整脚本代码(如果排版错乱，请注意每个`//`是一行，结尾不要有多余字符)：
 
 ```javascript
-
 // ==UserScript==
 // @name         PDF下载助手 - 智慧教育平台
 // @namespace    http://tampermonkey.net/
 // @version      1.0
 // @description  一键下载智慧教育平台的教材PDF
-// @author       YourName
+// @author       Maswdle
 // @match        https://basic.smartedu.cn/tchMaterial/*
 // @icon         https://basic.smartedu.cn/favicon.ico
 // @grant        none

@@ -35,8 +35,6 @@
 
 (function() {
     'use strict';
-
-    // 创建下载按钮
     const downloadBtn = document.createElement('button');
     downloadBtn.textContent = '下载PDF';
     downloadBtn.style.cssText = `
@@ -60,18 +58,13 @@
     downloadBtn.onmouseover = () => downloadBtn.style.boxShadow = '0 6px 15px rgba(0,0,0,0.3)';
     downloadBtn.onmouseout = () => downloadBtn.style.boxShadow = '0 4px 12px rgba(0,0,0,0.25)';
 
-    // 添加按钮动画效果
     downloadBtn.addEventListener('click', () => {
         downloadBtn.style.transform = 'translateY(-50%) scale(0.95)';
         setTimeout(() => {
             downloadBtn.style.transform = 'translateY(-50%)';
         }, 100);
     });
-
-    // 添加到页面
     document.body.appendChild(downloadBtn);
-
-    // 下载PDF的函数
     function downloadPDF(filename) {
         try {
             // 检查PDF查看器是否加载
@@ -119,7 +112,7 @@
         }
     }
 
-    // 显示通知函数
+
     function showNotification(message, type) {
         // 移除现有通知
         const existingNotif = document.getElementById('pdf-download-notification');
@@ -145,7 +138,7 @@
             animation: fadeIn 0.3s forwards, fadeOut 0.5s 2.5s forwards;
         `;
         
-        // 添加动画
+
         const style = document.createElement('style');
         style.textContent = `
             @keyframes fadeIn {
@@ -161,23 +154,23 @@
         
         document.body.appendChild(notif);
         
-        // 自动移除通知
+
         setTimeout(() => {
             if (notif.parentNode) notif.parentNode.removeChild(notif);
         }, 3000);
     }
 
-    // 按钮点击事件
+
     downloadBtn.addEventListener('click', () => {
         const defaultName = document.title.replace(' - 智慧教育平台', '') || '教材文档';
         const userFilename = prompt('请输入PDF文件名（无需输入扩展名）:', defaultName);
-        if (userFilename !== null) { // 用户点击了确定
+        if (userFilename !== null) { 
             const filename = userFilename.trim() === '' ? '未命名文档' : userFilename;
             downloadPDF(filename);
         }
     });
 
-    // 添加使用说明提示
+
     window.addEventListener('load', () => {
         setTimeout(() => {
             showNotification('💡 提示：点击右侧"下载PDF"按钮保存教材', 'info');
